@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
+*.log
 
+.vscode/
+.idea/
+node_modules/
+bld/
 # Compiled Object files
 *.slo
 *.lo

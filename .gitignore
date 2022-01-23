@@ -1,7 +1,7 @@
 # Prerequisites
 *.d
 *.log
-
+__pycache__/
 .vscode/
 .idea/
 node_modules/

@@ -19,6 +19,7 @@ RUN echo "Installing required packages " \
                build-essential \
                cmake \
                scons \
+               libssl-dev \
                libgtest-dev \
                libgmock-dev \
                libjsoncpp-dev \

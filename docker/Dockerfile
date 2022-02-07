@@ -32,6 +32,6 @@ ADD install_deps.sh /install_deps.sh
 
 RUN echo "Installing Dependencies" \
          && chmod +x /install_deps.sh \
-         && sh /install_deps
+         && sh /install_deps.sh
 
 ENTRYPOINT [ "/bin/bash" ]         

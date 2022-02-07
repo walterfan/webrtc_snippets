@@ -1,7 +1,8 @@
 
 # build
-docker build --tag hfrtc .
+
+docker build --tag hfrtc
 
 # run
 
-docker run --rm -it -v /your/folder:/workspace walterfan/docker-rtc
+docker run --rm -it -v /Users/yafan/Documents/workspace:/workspace hfrtc

@@ -12,3 +12,7 @@ include_directories(.)
 FIND_LIBRARY(COMM_LIB event "/usr/local/lib" NO_DEFAULT_PATH)
 #/workspace/webrtc/webrtc-checkout/src/out/Default/obj/modules/congestion_controller
 ```
+
+# practice
+
+ln -s /workspace/webrtc/webrtc-checkout/src webrtc-src

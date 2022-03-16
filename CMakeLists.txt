@@ -28,7 +28,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(media)
 add_subdirectory(signal_server)
-add_subdirectory(congestion_control)
+add_subdirectory(webrtc_cc)
 
 add_executable(webrtc_primer webrtc_primer.cpp)
 

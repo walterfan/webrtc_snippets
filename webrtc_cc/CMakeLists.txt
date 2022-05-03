@@ -10,7 +10,9 @@ find_library(CORE_SERVICES CoreServices)
 
 set(EXTRA_LIBS ${CORE_FOUNDATION} ${APPLICATION_SERVICES} ${CORE_SERVICES})
 
+
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (NOT "$ENV{WEBRTC_SRC}" STREQUAL "")
     set(WEBRTC_SRC "$ENV{WEBRTC_SRC}" CACHE INTERNAL "Copied from environment variable")
@@ -23,10 +25,11 @@ message("WEBRTC Library Folder: ${WEBRTC_LIB}")
 message("EXTRA_LIBS: ${EXTRA_LIBS}")
 
 include_directories(inc /usr/local/include ${WEBRTC_SRC})
-link_directories(/usr/local/lib ${WEBRTC_LIB})
+link_directories(/usr/local/lib /usr/lib ${WEBRTC_LIB})
 
-#gn gen out/x64/Debug --args='is_debug=true target_os="mac" is_component_build=false 
-#rtc_include_tests=false target_cpu="x64”’ --> arm64
+#gn gen out/x64/Debug --args='is_debug=true target_os="mac" is_component_build=false rtc_include_tests=false target_cpu="x64"'
+#gn gen out/arm64 --args='target_os="android" target_cpu="arm64" use_custom_libcxx=false'
+#gn gen out/x64/Debug --args='is_debug=true target_os="mac" is_component_build=false rtc_include_tests=false target_cpu="x64" use_custom_libcxx=false'
 
 add_executable(cctest 
     src/waltertest.cpp
@@ -39,5 +42,8 @@ add_executable(estimator_test
     inc/detector.h
     inc/estimator.h
 )
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 target_link_libraries(cctest PkgConfig::deps)
-target_link_libraries(estimator_test libgtest.a libgmock.a libwebrtc.a)
+target_link_libraries(estimator_test libgtest.a libgmock.a libwebrtc.a ${EXTRA_LIBS})

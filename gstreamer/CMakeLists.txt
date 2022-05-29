@@ -1,0 +1,3 @@
+cmake_minimum_required(VERSION 3.4)
+project(gstreamer_primer)
+add_subdirectory(tutorial)

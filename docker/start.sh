@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # encoding: utf-8
 # Walter Fan, 2020-2022
 echo "Enter WebRTC Develop Environment"

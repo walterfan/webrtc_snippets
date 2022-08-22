@@ -1,7 +1,7 @@
 
 # build
 ```
-docker build --tag walterfan/hfrtc .
+docker build -t walterfan/hfrtc:v1.0 -t walterfan/hfrtc:latest .
 docker images
 ```
 

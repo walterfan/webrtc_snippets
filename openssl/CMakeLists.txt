@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-project(X509Certificate)
+project(openssl_demo)
 
 if (APPLE)
   SET(OPENSSL_ROOT_DIR /usr/local/opt/openssl)
@@ -15,5 +15,17 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 
 add_executable(X509Certificate X509Certificate.cpp)
 target_link_libraries(X509Certificate ${OPENSSL_LIBRARIES})
+
+add_executable(dtls_example dtls_example.cpp)
+target_link_libraries(dtls_example ${OPENSSL_LIBRARIES})
+
+add_executable(simple_tls_server simple_tls_server.cpp)
+target_link_libraries(simple_tls_server ${OPENSSL_LIBRARIES})
+
+add_executable(tls_server tls_server.cpp)
+target_link_libraries(tls_server ${OPENSSL_LIBRARIES})
+
+add_executable(tls_client tls_client.cpp)
+target_link_libraries(tls_client ${OPENSSL_LIBRARIES})
 
 install(TARGETS X509Certificate RUNTIME DESTINATION bin)

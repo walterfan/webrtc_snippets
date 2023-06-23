@@ -1,13 +1,14 @@
 # Quick start
 
+```
 cd build
 cmake ..
 make
 
-
-sudo ./server <portnum>
-
-
+./tls_server 9911 ../server.pem ../key.pem
+./tls_client 9911
+```
+input username as walter, password as pass
 
 # Reference
 * https://cppcheatsheet.com/notes/cmake_basic.html

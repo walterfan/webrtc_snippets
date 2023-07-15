@@ -3,6 +3,7 @@
 _build/
 build/
 bld/
+dist/
 __pycache__/
 .ipynb_checkpoints/
 # Log file

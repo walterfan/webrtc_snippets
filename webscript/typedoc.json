@@ -1,0 +1,5 @@
+{
+  "entryPoints": ["src"],
+  "githubPages": false,
+  "out": "docs"
+}

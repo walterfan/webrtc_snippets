@@ -4,6 +4,11 @@
 #include <thread>
 #include <chrono>
 
+/*
+- create a buffer to hold 100ms of audio (jitter buffer max size = 100ms)
+- place incoming audio frames to the buffer
+- start the playout when the buffer has at least 40ms data (delay = 40ms)
+*/
 // Constants
 const int BUFFER_SIZE = 100;  // Size of the circular buffer
 const int PLAYOUT_DELAY_MS = 20;  // Playout delay in milliseconds

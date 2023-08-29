@@ -1,7 +1,6 @@
 ## 简介
 
-实时语音识别api python demo
-
+ASR demo based Baidu and Xunfei API
 
 
 ## 系统要求
@@ -46,4 +45,11 @@ source setenv.sh
 
 2) run iat_pcm_16k.py based on xunfei api
 
+
+## Reference
+* https://ai.baidu.com/ai-doc/SPEECH/Jlbxdezuf
+* https://github.com/Baidu-AIP/speech_realtime_api
+* https://www.xfyun.cn/doc/asr/voicedictation/API.html#%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E
+* https://global.xfyun.cn/doc/rtasr/rtasr/API.html#description-of-the-interface
+* https://www.xfyun.cn/doc/asr/voicedictation/API.html#%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B
 

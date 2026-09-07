@@ -1,0 +1,49 @@
+basic/tests/sip_protocol_test.cpp
+  s_6eda12364887ad::t_f67dca8bc5b844 39,45,47-58,72,81,133,208,257,308,361,418
+  s_6eda12364887ad::t_6a3075700d1d84 36-38
+  s_6eda12364887ad::t_041ab250f76a82 40-44
+  s_6eda12364887ad::t_e737e6483108ef 46
+  s_6eda12364887ad::t_263b615dd63a73 59-61,69-71
+  s_6eda12364887ad::t_b6d9e0cab254a6 73-75,78-80
+  s_6eda12364887ad::t_4c2620f997b782 82-84,130-132
+  s_6eda12364887ad::t_d1ed845affa655 134-136,205-207
+  s_6eda12364887ad::t_e5f43942fa51e1 209-211,254-256
+  s_6eda12364887ad::t_f10f7b2f721eee 258-260,305-307
+  s_6eda12364887ad::t_96de6626bec828 309-311,358-360
+  s_6eda12364887ad::t_43a228950b32a1 362-364,415-417
+  s_6eda12364887ad::t_7011f5d51a9c0a 419-420
+basic/include/practice/sip_message.hpp
+  h_0ab5b9336177d2 1-2,4-13,16-34
+  s_6eda12364887ad::t_c4220bd2748a48 3,14-15
+basic/exercises/03_sip_transaction/starter.cpp
+  s_6eda12364887ad::t_51c1bd33dafe8c 206-258,261,282-283,296-298,304-305,312-314
+  h_0ab5b9336177d2 1,4,6,8-108,117,128-130,155,160-165,167,175-176,205,259-260,269-270,275-277,285,293,302,315-347
+  s_6eda12364887ad::t_3d0481e91bfd97 3,109-116,131-154,156-159,166,168-174,177-204,262-268,271-274,278-281,284,286-292,294-295,299-301,303,306-311
+  s_6eda12364887ad::t_1fc0cf5c37e5b5 2,5
+  s_6eda12364887ad::t_43ed0d722429d9 7,118-127
+basic/src/sip_message.cpp
+  s_6eda12364887ad::t_6974352edb6f1f 150,152-156,158
+  h_0ab5b9336177d2 1-8,10-141,162-165,171-217,219-220,222-227
+  s_6eda12364887ad::t_9accb40cad8312 9,142-149,151,157,159-161,166-170,218,221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "822a6c5aa83d7f6eea50c72df4b5b4eae0b7ae1f",
+  "prompts": {},
+  "humans": {
+    "h_0ab5b9336177d2": {
+      "author": "Walter Fan <walter.fan@zoom.us>"
+    }
+  },
+  "sessions": {
+    "s_6eda12364887ad": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "07c81716-901b-45ed-92c1-9b8f76ad12aa",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "Walter Fan <walter.fan@zoom.us>"
+    }
+  }
+}

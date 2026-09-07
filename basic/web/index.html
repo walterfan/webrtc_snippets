@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RTC Practice Lab</title>
+    <link rel="stylesheet" href="/vendor/prism.min.css" />
+    <style>
+      :root { --ink:#172033; --muted:#607089; --line:#d8e0eb; --page:#f5f7fb; --card:#fff; --blue:#2463eb; --green:#137a45; --amber:#9b6200; --red:#b52727; }
+      * { box-sizing:border-box; }
+      body { margin:0; min-width:720px; color:var(--ink); background:var(--page); font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      header { height:62px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; color:#fff; background:#172033; }
+      header h1 { margin:0; font-size:18px; } header p { margin:0; color:#c6d2e2; font-size:12px; }
+      main { display:grid; grid-template-columns:280px minmax(0,1fr); max-width:1440px; min-height:calc(100vh - 62px); margin:0 auto; }
+      aside { padding:18px 12px; border-right:1px solid var(--line); background:#fff; }
+      .caption { margin:0 8px 10px; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+      #exercise-list { display:grid; gap:4px; }
+      .exercise { width:100%; display:flex; gap:9px; align-items:center; padding:9px 8px; border:0; border-radius:7px; color:inherit; background:transparent; text-align:left; cursor:pointer; }
+      .exercise:hover { background:#eef3ff; }.exercise.active { color:#123fbb; background:#dfeaff; font-weight:650; }
+      .day { flex:0 0 27px; color:var(--muted); font:12px ui-monospace,SFMono-Regular,Menlo,monospace; }.exercise.active .day { color:inherit; }
+      .complete { margin-left:auto; color:var(--green); font-weight:700; }
+      section { padding:28px; overflow:hidden; }.panel { max-width:1000px; margin:0 auto; }
+      .topic { color:var(--blue); font-size:12px; font-weight:700; }.title-row { display:flex; gap:18px; align-items:start; justify-content:space-between; }
+      h2 { margin:4px 0 5px; font-size:28px; line-height:1.2; }.summary { margin:0 0 18px; color:var(--muted); }
+      .actions { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px; }.button { padding:9px 13px; border:1px solid var(--blue); border-radius:6px; color:#fff; background:var(--blue); font:inherit; cursor:pointer; }.button:disabled { opacity:.55; cursor:wait; }.button.secondary { color:#41516b; border-color:var(--line); background:#fff; }
+      .tabs { display:flex; gap:4px; margin-top:20px; border-bottom:1px solid var(--line); }.tab { padding:9px 13px; border:0; border-bottom:2px solid transparent; color:var(--muted); background:transparent; font:inherit; cursor:pointer; }.tab.active { border-bottom-color:var(--blue); color:var(--blue); font-weight:700; }
+      pre { min-height:220px; margin:0; padding:18px; overflow:auto; border:1px solid var(--line); border-top:0; border-radius:0 0 8px 8px; color:#243148; background:#fff; white-space:pre-wrap; word-break:break-word; font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+      .result { margin-top:20px; border:1px solid var(--line); border-radius:8px; background:#fff; }.result-head { display:flex; gap:10px; align-items:center; padding:12px 14px; border-bottom:1px solid var(--line); }.result-head h3 { margin:0; font-size:14px; }.badge { padding:2px 8px; border-radius:99px; font-size:12px; font-weight:700; }.badge.passed { color:var(--green); background:#e5f6eb; }.badge.skipped { color:var(--amber); background:#fff3dc; }.badge.failed,.badge.build_error,.badge.timed_out { color:var(--red); background:#ffe9e9; }.elapsed { margin-left:auto; color:var(--muted); font-size:12px; }.result pre { min-height:80px; border:0; }.status { min-height:22px; margin:0 0 12px; color:var(--muted); }.status.error { color:var(--red); }.hidden { display:none; }
+      @media (max-width:800px) { body { min-width:0; } main { grid-template-columns:1fr; } aside { border-right:0; border-bottom:1px solid var(--line); } #exercise-list { grid-template-columns:repeat(2,minmax(0,1fr)); } section { padding:18px; } }
+    </style>
+  </head>
+  <body>
+    <header><div><h1>RTC Practice Lab</h1><p>30 天 C++ · SIP · WebRTC 复习</p></div><p id="progress">0 / 30 已标记完成</p></header>
+    <main>
+      <aside><p class="caption">30-day path</p><nav id="exercise-list" aria-label="练习目录"></nav></aside>
+      <section><div class="panel">
+        <p id="topic" class="topic">正在加载…</p><div class="title-row"><div><h2 id="title">RTC Practice Lab</h2><p id="summary" class="summary"></p></div></div>
+        <div class="actions"><button id="check" class="button" disabled>运行验收测试</button><button id="run" class="button" disabled>运行 run() 示例</button><button id="copy-path" class="button secondary" disabled>复制 starter.cpp 路径</button><button id="mark-complete" class="button secondary" disabled>标记为完成</button></div>
+        <p id="status" class="status" role="status"></p>
+        <div class="tabs" role="tablist"><button class="tab active" data-tab="readme" role="tab">题目说明</button><button class="tab" data-tab="header" role="tab">starter.hpp</button><button class="tab" data-tab="source" role="tab">starter.cpp</button></div>
+        <pre><code id="content">Loading…</code></pre>
+        <div id="result" class="result hidden"><div class="result-head"><h3>最新运行结果</h3><span id="result-state" class="badge"></span><span id="elapsed" class="elapsed"></span></div><pre id="result-output"></pre></div>
+      </div></section>
+    </main>
+    <script src="app.js"></script>
+    <script src="/vendor/prism.js"></script>
+    <script src="/vendor/prism-c.min.js"></script>
+    <script src="/vendor/prism-cpp.min.js"></script>
+  </body>
+</html>
